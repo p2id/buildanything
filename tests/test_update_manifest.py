@@ -40,6 +40,18 @@ class UpdateManifestTests(unittest.TestCase):
                 "".join(f"{item['sha256']}  {item['path']}\n" for item in expected),
             )
 
+    def test_ignores_python_bytecode_cache(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            cache = root / "automation" / "__pycache__"
+            cache.mkdir(parents=True)
+            (cache / "module.cpython-312.pyc").write_bytes(b"generated")
+            (root / "source.txt").write_text("tracked input", encoding="utf-8")
+
+            files = generate_manifest(root)
+
+            self.assertEqual([item["path"] for item in files], ["source.txt"])
+
     def test_rejects_file_symlink(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory) / "repo"

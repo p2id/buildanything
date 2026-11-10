@@ -7,6 +7,11 @@
       "sha256": "78dc11bb60364cbb65afecce40c965fa2e395491632a96a5be330a37fe8daad8"
     },
     {
+      "path": ".github/workflows/validate.yml",
+      "bytes": 1274,
+      "sha256": "cb0758693a6cd8b65eb37c360b5c3941c2b26b65ea65e924ffd24da3d3dbbef3"
+    },
+    {
       "path": ".gitignore",
       "bytes": 48,
       "sha256": "cf2a937b3c0c3532810d95789a9052c84a317152fc872e5b88762c3dc265e479"
@@ -163,8 +168,8 @@
     },
     {
       "path": "automation/update_manifest.py",
-      "bytes": 591,
-      "sha256": "266554691a80941a1276429358d1da75c184c129bd362fba8002c3e2d8853712"
+      "bytes": 1751,
+      "sha256": "a1d4677ec89b78a13b5b24a524ea17b86d752d6cf24a32df5a3c5bbaefa64a87"
     },
     {
       "path": "automation/zapier-blueprint.md",
@@ -625,6 +630,11 @@
       "path": "templates/readiness-pack.md",
       "bytes": 467,
       "sha256": "7979a358f1f873ab0903c5c552d7ec99ccb259c003de1ef6db6a7fd69664ae0e"
+    },
+    {
+      "path": "tests/test_update_manifest.py",
+      "bytes": 3932,
+      "sha256": "bfc253005290fb9ddaa8b18ff7c4331ceea5d59c0c49a4095459cc6bee2e1175"
     }
   ]
 }

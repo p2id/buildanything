@@ -22,6 +22,8 @@ def generate_manifest(root: Path = ROOT) -> list[dict[str, object]]:
             continue
         if path.is_symlink():
             raise ValueError(f"refusing to include symbolic link: {relative.as_posix()}")
+        if "__pycache__" in relative.parts:
+            continue
         if not path.is_file() or path.name in EXCLUDED_OUTPUTS:
             continue
 
